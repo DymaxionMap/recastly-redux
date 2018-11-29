@@ -2,8 +2,8 @@ import React from 'react';
 import Search from './../components/Search.js';
 import { connect } from 'react-redux';
 import handleVideoSearch from '../actions/search.js';
-var SearchContainer = () => {
-  
+var SearchContainer = (arg) => {
+  return new Search(arg);
 };
 
 //TODO: define a SearchContainer component which will hook up your action
@@ -14,4 +14,5 @@ var SearchContainer = () => {
 var mapDispatchToProps = (dispatch) => ({
   handleSearchInputChange: q => dispatch(handleVideoSearch(q)) });
 
+// export default connect(null, mapDispatchToProps)(SearchContainer);
 export default connect(null, mapDispatchToProps)(SearchContainer);
